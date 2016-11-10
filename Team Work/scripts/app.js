@@ -32,7 +32,7 @@ $('.wrapper main').on('changePage', function(event, location) {
             break;
         case "list":
             listModel.render(punchStarterDatabase);
-            listModel.attachEvents(punchStarterDatabase);
+            //listModel.attachEvents(punchStarterDatabase);
             break;
         case "create":
             createModel.render(Categories);
