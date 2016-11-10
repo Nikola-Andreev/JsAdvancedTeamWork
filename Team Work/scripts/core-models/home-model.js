@@ -4,7 +4,6 @@ class HomeModel {
 
     render(isLoggedIn, database) {
         if (isLoggedIn) {
-            alert('I was here')
             $('.wrapper header .header-button-holder').html(
                 '<div class="header-button home-redirect">'+
                 '   <p>Home</p>' +
