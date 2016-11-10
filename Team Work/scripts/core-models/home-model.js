@@ -18,6 +18,43 @@ class HomeModel {
                 '   <p>Logout</p>' +
                 '</div>'
             )
+
+            database = database.sort((a,b) => {
+               return b.accumulatedMoney/b.targetPrice - a.accumulatedMoney/a.targetPrice
+            }).slice(0,3)
+
+            for (let i = 0; i < database.length; i++) {
+                console.log(database[i])
+                console.log(database[i].accumulatedMoney/database[i].targetPrice )
+            }
+
+            $('.wrapper main').html(
+                '<div class="home-logged-in-welcome">'+
+                '   Welcome, ' + sessionStorage['username']  + '!' +
+                '</div>' +
+                '<div class="home-logged-in-title">' +
+                '   Top 3 PunchStarters' +
+                '</div>' +
+                '<div class="top-3-starters-wrapper">' +
+                '   <div class="punch-starter-holder">'+
+                `   <label>${database[0].name}</label>` +
+                `   <label>${database[0].manufacturer}</label>` +
+                `   <label>${database[0].accumulatedMoney} / ${database[0].targetPrice}</label>` +
+                '   </div>'  +
+                '   <div class="punch-starter-holder">' +
+                `   <label>${database[1].name}</label>` +
+                `   <label>${database[1].manufacturer}</label>` +
+                `   <label>${database[1].accumulatedMoney} / ${database[1].targetPrice}</label>` +
+                '    </div>' +
+                `   <div class="punch-starter-holder">` +
+                `   <label>${database[2].name}</label>` +
+                `   <label>${database[2].manufacturer}</label>` +
+                `   <label>${database[2].accumulatedMoney} / ${database[2].targetPrice}</label>` +
+                '   </div>' +
+                '</div>'
+            )
+
+
         } else {
             $('.wrapper header .header-button-holder').html(
                 '<div class="header-button home-redirect">' +
