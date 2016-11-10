@@ -8,9 +8,9 @@ class ListModel {
         let table = $('<table>').addClass('punch-starter-table')
         html.append(table)
         let tableHeader = ['ID', 'Name', 'Manufacturer', 'Type', 'Progress']
-        $('.punch-starter-table').append($('<tr>'))
+        table.append($('<tr>'))
         for (let element of tableHeader){
-            $('.punch-starter-table').find('tr').append($('<th>').text(element))
+            table.find('tr').append($('<th>').text(element))
         }
         for (let element of arr){
             let row = $('<tr>')
@@ -19,8 +19,9 @@ class ListModel {
             }
             row.append($('<td>').text(element.constructor.name.replace('PunchStarter','')))
             row.append($('<td>').text(`${(element['_accumulatedMoney']/element['_tagetPrice'] * 100).toFixed(2)}%`))
-            $('.punch-starter-table').append(row)
+            table.append(row)
         }
+
         $('.wrapper main').empty()
         $('.wrapper main').append($(html))
     }
