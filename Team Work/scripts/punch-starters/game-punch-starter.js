@@ -1,4 +1,4 @@
-let BasePunchStarter = require('./base-punch-starter')
+let BasePunchStarter = require('./base-punch-starter.js')
 
 function checkType(param) {
     if(Object.prototype.toString.call( param ) !== '[object Array]' ){
