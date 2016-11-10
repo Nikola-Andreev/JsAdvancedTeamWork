@@ -42,10 +42,23 @@ class HomeModel {
 
     attachEvents(isLoggedIn) {
         if (isLoggedIn) {
-            //TODO: Home redirect onclick
-            //TODO: List redirect onclick
-            //TODO: Create redirect onclick
-			//TODO: Logout redirect onclick
+            //Attach redirect event on Logout button and clear session storage
+            $('.header-button-holder .logout-redirect').click(function () {
+                sessionStorage.removeItem('username');
+                $('.wrapper main').trigger('changePage', ['home']);
+            });
+            //Attach redirect function on List button
+            $('.header-button-holder .list-redirect').click(function () {
+                $('.wrapper main').trigger('changePage', ['list']);
+            });
+            //Attach redirect event on Create button
+            $('.header-button-holder .create-redirect').click(function () {
+                $('.wrapper main').trigger('changePage', ['create']);
+            });
+            //Attach redirect event on Home button
+            $('.header-button-holder .home-redirect').click(function () {
+                $('.wrapper main').trigger('changePage', ['home']);
+            });
         } else {
             $('.home-redirect').on('click', function () {
                 $('.wrapper main').trigger('changePage', ['home']);
