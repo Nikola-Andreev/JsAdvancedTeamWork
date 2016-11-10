@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PunchStarter</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="scripts/libs/system.js"></script>
+    <script>
+        SystemJS.config({
+            baseURL: './scripts'
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <img src="images/pslogo.png">
+        <div class="header-button-holder">
+        </div>
+    </header>
+    <main>
+    </main>
+    <footer>
+        <p>@ CopyRight 2016 Sanity Web Design Studios. All rights reserved.</p>
+    </footer>
+</div>
+<script>
+    SystemJS.import('app.js');
+</script>
+</body>
+</html>

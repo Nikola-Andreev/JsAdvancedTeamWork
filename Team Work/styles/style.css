@@ -1,0 +1,623 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*#############################################
+  #############    MAIN STYLE    ##############
+  #############################################*/
+
+body {
+
+}
+
+body .wrapper {
+    height: 100vh;
+}
+
+body .wrapper header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 9vh;
+    background-color: #000000;
+}
+
+body .wrapper header img {
+    width: 30%;
+    height: 90%;
+}
+
+body .wrapper header .header-button-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 70%;
+
+    float: right;
+}
+
+body .wrapper header .header-button-holder .header-button {
+    color: #FFFFFF;
+    margin: 0.5vw;
+    margin-right: 2vw;
+    /*width: 10%;*/
+    height: 100%;
+    border-radius: 10px;
+    padding: 0.1vw;
+    transition: all 0.3s ease;
+    /*border-left: 5px solid #FFFFFF;*/
+    /*border-right: 5px solid #FFFFFF;*/
+}
+
+/*body .wrapper header .header-button-holder .header-button:first-child {*/
+/*border-left: none;*/
+/*}*/
+
+/*body .wrapper header .header-button-holder .header-button:last-child {*/
+/*border-right: none;*/
+/*}*/
+
+body .wrapper header .header-button-holder .header-button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 40px 10px #FFFFFF;
+    -moz-box-shadow: 1px 1px 40px 10px #FFFFFF;
+    box-shadow: 1px 1px 40px 10px #FFFFFF;
+}
+
+body .wrapper header .header-button-holder .header-button p {
+    padding: 0.2vw;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+body .wrapper header .header-button-holder .header-button p:hover {
+    text-shadow: 1px 1px 5px #000000;
+}
+
+body .wrapper main {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 9vh 0;
+}
+
+body .wrapper main .home-logged-out-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-webkit-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-moz-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-ms-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-webkit-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-moz-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-ms-keyframes move-clouds-back {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.stars, .twinkling, .clouds {
+    position: absolute;
+    width: 100%;
+    height: 87%;
+    display: block;
+}
+
+.stars {
+    background: #000 url(../images/stars.png) repeat top center;
+    z-index: 1;
+}
+
+.twinkling {
+    background: transparent url(../images/twinkling.png) repeat top center;
+    z-index: 1;
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+    background: transparent url(../images/clouds.png) repeat top center;
+    z-index: 3;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+body .wrapper main .home-logged-out-wrapper h1 {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 100%;
+    padding-top: 10vw;
+    position: absolute;
+    z-index: 5;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 5px #FFFFFF;
+}
+
+body .wrapper main .home-logged-out-wrapper h2 {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 100%;
+    padding-top: 20vw;
+    position: absolute;
+    z-index: 5;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 5px #FFFFFF;
+}
+
+body .wrapper main .home-logged-out-wrapper h2 a {
+    text-decoration: none;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2vw #FFFFFF;
+}
+
+body .wrapper main .login-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+body .wrapper main .login-wrapper .login-form {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+}
+
+body .wrapper main .login-wrapper .login-form label {
+    font-size: 3vw;
+    color: #FFFFFF;
+    width: 30vw;
+    margin-top: 31vh;
+}
+
+body .wrapper main .login-wrapper .login-form .input-holder {
+    margin-top: 30vh;
+    width: 30vw;
+    height: 5.5vw;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+body .wrapper main .login-wrapper .login-form .input-holder input {
+    width: 27vw;
+    height: 5vw;
+    margin-left: 1.4vw;
+    border: none;
+    font-size: 3vw;
+}
+
+body .wrapper main .login-wrapper .login-form .input-holder input:focus {
+    outline: none;
+    border-bottom: 5px solid #000000;
+}
+
+body .wrapper main .login-wrapper button {
+    position: absolute;
+    top: 56vh;
+    z-index: 5;
+    width: 15%;
+    height: 8vh;
+    margin-left: 42.3vw;
+    font-size: 2.5vw;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body .wrapper main .login-wrapper button:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.home-logged-in-title, .home-logged-in-welcome {
+    padding-top: 2vh;
+    width: 35vw;
+    margin: auto;
+    margin-top: 2vh;
+    font-size: 2.5vw;
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+}
+
+.top-3-starters-wrapper {
+    padding-top: 7vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-3-starters-wrapper .punch-starter-holder {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 23vw;
+    border: 2px solid #AAAAAA;
+    border-radius: 20px;
+    margin-left: 10vw;
+}
+
+.top-3-starters-wrapper .punch-starter-holder:hover{
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.top-3-starters-wrapper .punch-starter-holder label{
+    padding: 7.15vh 3vw 4vh 3vw;
+    text-align: center;
+    border-bottom: 2px solid #AAAAAA;
+    font-size: 1.25vw;
+    font-family: monospace;
+}
+
+.top-3-starters-wrapper .punch-starter-holder label:last-child{
+    border: none;
+}
+
+body .wrapper main .create-title {
+    padding-top: 2vh;
+    width: 35vw;
+    margin: auto;
+    margin-top: 2vh;
+    font-size: 2.5vw;
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+}
+
+/*CREDIT GOES TO JEFF HAYS CSS*/
+.list-holder select, div.punch-starter-category select {
+    padding: 0.5vw 1.5vw 0.5vw 1.5vw;
+    margin-top: 2vh;
+    background: #f8f8f8;
+    color: #444444;
+    border: 1px solid #aaa;
+    border-radius: 0;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1vw;
+    text-align-last: center;
+}
+
+.list-holder select:-moz-focusring, div.punch-starter-category select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #444;
+}
+
+.list-holder select::-ms-expand, div.punch-starter-category select::-ms-expand {
+    display: none;
+}
+
+.list-holder, div.punch-starter-category {
+    position: relative;
+    width: 30vw;
+    margin: auto;
+}
+
+.list-holder select, div.punch-starter-category select {
+    width: 30vw;
+}
+
+@media screen\0 {
+    .list-holder, div.punch-starter-category:after {
+        width: 38px;
+        text-indent: 15px;
+        right: 0;
+    }
+}
+
+@media screen and (min--moz-device-pixel-ratio: 0) {
+    .list-holder select, div.punch-starter-category select {
+        padding-right: 40px;
+    }
+
+    .list-holder:before, div.punch-starter-category:before {
+        right: 6px;
+    }
+
+    .list-holder:after, div.punch-starter-category:after {
+        text-indent: 14px;
+        right: 6px;
+        top: -5px;
+        width: 36px;
+    }
+}
+
+/*CREDIT GOES TO JEFF HAYS CSS*/
+
+body .wrapper main .create-form-holder {
+    padding-top: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+body .wrapper main .create-form-holder form {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1vw;
+}
+
+body .wrapper main .create-form-holder form>* {
+    width: 20vw;
+    height: 25vw;
+    margin-left: 10vw;
+    /*background-color: #aaaaaa;*/
+}
+
+body .wrapper main .create-form-holder form>div>* {
+    padding: 0.5vw;
+}
+
+body .wrapper main .create-form-holder form>div label {
+    font-size: 1.5vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body .wrapper main .create-form-holder form>div .input-holder {
+    width: 15vw;
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+    margin-bottom: 1vw;
+    border: 2px solid #AAAAAA;
+    border-radius: 7px;
+}
+
+body .wrapper main .create-form-holder form>div .input-holder input {
+    width: 15vw;
+    font-family: monospace;
+    border: none;
+    outline: none;
+}
+
+body .wrapper main .create-form-holder form>div .input-holder textarea {
+    font-family: monospace;
+    border: none;
+    outline: none;
+    resize: none;
+    width: 15vw;
+    height: 2vw;
+}
+
+body .wrapper main .create-form-holder form>div>.button-holder {
+    padding-bottom: 1vw;
+}
+
+body .wrapper main .create-form-holder form>div>.button-holder>*{
+    height: 3vw;
+    width: 7vw;
+    border-radius: 7px;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+body .wrapper main .create-form-holder form>div>.button-holder>*:focus{
+    outline: none;
+}
+
+body .wrapper main .create-form-holder form>div>.button-holder>*:last-child {
+    margin-left: 1.75vw;
+}
+
+div.list-holder {
+    height: 2vw;
+    margin: 0;
+    width: 16vw;
+    padding-bottom: 1vw;
+}
+
+.list-holder select {
+    height: 2vw;
+    padding-top: 0;
+    margin-top: 0;
+    width: 16vw;
+}
+
+body .wrapper main .create-form-holder .submit-button-holder {
+    position: absolute;
+    bottom: 14vh;
+    left: 39vw;
+}
+
+body .wrapper main .create-form-holder .submit-button-holder>button{
+    width: 20vw;
+    height: 3vw;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1.5vw;
+}
+
+.punch-starter-list-holder {
+    width: 100vw;
+    height: 35vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    overflow: auto;
+}
+
+.punch-starter-table {
+    width: 90vw;
+    margin: auto;
+    overflow: auto;
+    height: 30vh;
+    border: 2px solid #000000;
+}
+
+.punch-starter-table td, th {
+    text-align: center;
+    font-size: 2vw;
+    font-family: monospace;
+    height: 3.5vw;
+    vertical-align: middle;
+}
+
+.punch-starter-table tr {
+    border-bottom: 2px solid #000000;
+}
+
+.punch-starter-table tr:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.punch-starter-table tr:last-child {
+    border-bottom: none;
+}
+
+.punch-starter-table th {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.punch-starter-table td {
+    border-right: 2px solid #000000;
+}
+
+.punch-starter-table td:last-child {
+    border-right: none;
+}
+
+body .wrapper footer {
+    position: fixed;
+    z-index: 5;
+    bottom: 0vw;
+    left: 0vw;
+    width: 100vw;
+    height: 9vh;
+    background-color: #000000;
+}
+
+body .wrapper footer p {
+    height: 25px;
+    width: 100vw;
+    text-align: center;
+    padding-top: 1vw;
+    font-size: 1.25vw;
+    color: #FFFFFF;
+}
