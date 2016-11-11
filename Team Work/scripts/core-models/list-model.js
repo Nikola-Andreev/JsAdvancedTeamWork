@@ -25,6 +25,10 @@ class ListModel {
         $('.wrapper main').empty()
         $('.wrapper main').append($(html))
     }
+
+    attachEvents(punchStarterDatabase) {
+
+    }
 }
 
 module.exports = ListModel;

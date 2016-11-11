@@ -34,7 +34,7 @@ class CreateModel {
             '<select class="input-genres"></select>' +
             '</div>' +
             '<div class="input-holder">' +
-            '<input class="input-genre" type="text" placeholder="Add genre..."></div>' +
+            '<input class="new-genre" type="text" placeholder="Add genre..."></div>' +
             '<div class="button-holder">' +
             '<button class="add-genre-button" type="button">Add</button>' +
             '<button class="remove-genre-button" type="button">Remove</button></div> ' +
@@ -98,21 +98,34 @@ class CreateModel {
             } else if(that.category === 'Movie'){
                 $('.individual-parameters').empty()
                 that.renderCreateMovieModel()
-                that.attachEventsMovieGameModel()
+                that.attachEventsCreateMovieModel()
             } else if(that.category === 'Innovative'){
                 $('.individual-parameters').empty()
-                that.renderCreateInovativeModel()
-                that.attachEventsInovativeGameModel()
+                that.renderCreateInnovativeModel()
+                //that.attachEventsCreateInovativeModel()
             } else if(that.category === 'Food'){
                 $('.individual-parameters').empty()
                 that.renderCreateFoodModel()
-                that.attachEventsFoodGameModel()
+                that.attachEventsCreateFoodModel()
             } else if(that.category === 'Crafts'){
                 $('.individual-parameters').empty()
                 that.renderCreateCraftsModel()
-                that.attachEventsCraftGameModel()
+                that.attachEventsCreateCraftsModel()
             }
         })
+
+        $('.wrapper main form .add-genre-button').on('click', function(){
+            if ($('.new-genre').val() != '') {
+                $('.input-genres').append($('<option>').text($('.new-genre').val()))
+                $('.new-genre').val('')
+            }
+        })
+
+        $('.wrapper main form .remove-genre-button').on('click', function(){
+            $('.input-genres :selected').remove()
+        })
+
+
     }
 
     renderCreateGameModel(){
@@ -146,7 +159,8 @@ class CreateModel {
     }
 
     renderCreateCraftsModel () {
-        let html = '<div class="list-holder"><select class="input-resources"></select></div>' +
+        let html = '<label>Crafts:</label>' +
+            '<div class="list-holder"><select class="input-resources"></select></div>' +
             '<div class="input-holder">' +
             '<input class="new-resource" type="text" placeholder="Add resource..."></div>' +
             '<div class="button-holder"><button class="add-resource-button" type="button">Add</button>' +
