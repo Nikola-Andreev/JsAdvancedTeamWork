@@ -69,7 +69,9 @@ class CreateModel {
             '<button class="remove-actor-button" type="button">Delete</button></div>'
 
         $('.wrapper main form .individual-parameters').append(html)
+    }
 
+    attachEventsCreateMovieModel (){
         $('.wrapper main form .individual-parameters .add-actor-button').on('click', function(){
             if ($('.new-actor').val() != '') {
                 $('.input-actors').append($('<option>').text($('.new-actor').val()))
@@ -81,6 +83,7 @@ class CreateModel {
             $('.input-actors :selected').remove()
         })
     }
+
     get category(){
         return this._category
     }
