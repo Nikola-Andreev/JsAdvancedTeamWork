@@ -125,6 +125,41 @@ class CreateModel {
             $('.input-genres :selected').remove()
         })
 
+        $('.submit-button-holder button').on('click',function () {
+            let name = $('.input-name').val()
+            let manufacturer = $('.input-manufacturer').val()
+            let description = $('.input-description').val()
+            let genres = []
+            $('.input-genres option').each(function() {
+                genres.push(this.val())
+            })
+            let price = Number($('.input-target-price').val())
+            let punchStarterType =  $('#category').val()
+
+            let nameValid = false
+            if(name !== '' && typeof name == 'string'){
+                nameValid = true
+            }
+            let manValid = false
+            if(manufacturer !== '' && typeof manufacturer == 'string'){
+                manufacturer = true
+            }
+            let descValid = false
+            if(description !== '' && typeof description == 'string'){
+                descValid = true
+            }
+
+            if(punchStarterType === 'Movie'){
+
+            }
+
+            console.log(name)
+            console.log(manufacturer)
+            console.log(description)
+            console.log(genres)
+            console.log(price)
+            console.log(punchStarterType)
+        })
 
     }
 
