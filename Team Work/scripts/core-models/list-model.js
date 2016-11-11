@@ -31,8 +31,7 @@ class ListModel {
         $('.punch-starter-table tr').each(function () {
             $(this).click(function () {
                 let currentId = $(this).children()[0].textContent;
-                let currentObject = punchStarterDatabase[currentId - 1];
-                $('.wrapper main').trigger('changePage', ["details", currentId]);
+                $('.wrapper main').trigger('changePage', ["details", currentId - 1]);
             })
         });
     }
