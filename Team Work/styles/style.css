@@ -603,6 +603,165 @@ body .wrapper main .create-form-holder .submit-button-holder>button{
     border-right: none;
 }
 
+.punch-starter-wrapper {
+    width: 96vw;
+    height: 35vw;
+    padding: 2vw;
+}
+
+.punch-starter-wrapper>* {
+    margin-top: 1vw;
+}
+
+.punch-starter-wrapper .punch-starter-caption {
+    display: flex;
+    flex-direction: row;
+    height: 3vw;
+    background-color: #AAAAAA;
+}
+
+.punch-starter-wrapper .punch-starter-caption label {
+    padding: 0.5vw;
+    width: 48vw;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.punch-starter-wrapper .punch-starter-caption label:first-child {
+    text-align: start;
+    margin-left: 2vw;
+}
+
+.punch-starter-wrapper .punch-starter-caption label:last-child {
+    text-align: end;
+    margin-right: 2vw;
+}
+
+.punch-starter-wrapper .punch-starter-resume {
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.punch-starter-wrapper .punch-starter-resume>* {
+    margin-top: 1vw;
+}
+
+.punch-starter-wrapper .punch-starter-resume label {
+    text-align: start;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1vw;
+    border-bottom: 2px solid #000000;
+}
+
+.punch-starter-wrapper .punch-starter-resume p {
+    text-align: start;
+    font-family: monospace;
+    font-size: 1vw;
+}
+
+.punch-starter-wrapper .punch-starter-lists {
+    display: flex;
+    flex-direction: row;
+}
+
+.punch-starter-wrapper .punch-starter-lists>*{
+    margin-left: 9vw;
+    width: 20vw;
+    height: 12vw;
+    overflow: auto;
+}
+
+.punch-starter-wrapper .punch-starter-lists label {
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 0.5vw;
+}
+
+.punch-starter-wrapper .punch-starter-lists ul {
+    margin-top: 2vw;
+}
+
+.punch-starter-wrapper .punch-starter-lists ul li {
+    text-align: start;
+    font-family: monospace;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+}
+
+.punch-starter-wrapper .punch-starter-lists p {
+    text-align: start;
+    font-family: monospace;
+    font-size: 1vw;
+    margin-top: 2vw;
+}
+
+.punch-starter-wrapper .punch-starter-progress {
+    width: 96vw;
+    height: 10vw;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.punch-starter-wrapper .punch-starter-progress p {
+    text-align: start;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 0.1vw;
+    border-bottom: 2px solid #000000;
+    width: 94vw;
+    padding: 1vw;
+    font-size: 2vw;
+}
+
+.punch-starter-wrapper .punch-starter-progress .donate-holder {
+    display: flex;
+    flex-direction: row;
+    height: 5vw;
+    width: 96vw;
+}
+
+.punch-starter-wrapper .punch-starter-progress .donate-holder .progress-bar-outer {
+    width: 70vw;
+    height: 5vw;
+    margin-top: 0.6vw;
+}
+
+.punch-starter-wrapper .punch-starter-progress .donate-holder .progress-bar-outer .progress-bar-inner {
+    background-color: #AAAAAA;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.punch-starter-progress .donate-holder input {
+    width: 10vw;
+    height: 3vw;
+    outline: none;
+    font-family: monospace;
+    font-size: 1.5vw;
+    margin-left: 3vw;
+    margin-top: 1vw;
+}
+
+.punch-starter-progress .donate-holder button {
+    width: 10vw;
+    height: 3vw;
+    font-family: monospace;
+    font-size: 2vw;
+    font-weight: bold;
+    margin-left: 3vw;
+    margin-top: 1vw;
+}
+
 body .wrapper footer {
     position: fixed;
     z-index: 5;
