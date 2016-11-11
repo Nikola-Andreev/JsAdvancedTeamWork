@@ -6,11 +6,11 @@ class PunchStarterModel {
             `<label>${punchStarter.name}</label>` +
             `<label>${punchStarter.constructor.name.replace('PunchStarter', '')}</label>` +
           '</div>' +
-          '<div class="punch-starter-resume"></div>' +
+          '<div class="punch-starter-resume">' +
             `<label>Manufacturer</label>` +
             `<p>${punchStarter.manufacturer}</p>` +
             `<label>Description</label>` +
-            `<p>${punchStarter.description}</p>` +
+            `<p>${punchStarter.description}</p></div>` +
           '<div class="punch-starter-lists"></div>' +
           '<div class="punch-starter-progress"></div>' +
       '</div>'
@@ -19,16 +19,26 @@ class PunchStarterModel {
     }
 
     renderProgress(punchStarter){
+        let progress = Math.round(Number(punchStarter.accumulatedMoney)/Number(punchStarter.targetPrice) * 100);
+
+        console.log(punchStarter.accumulatedMoney)
+        console.log(punchStarter.targetPrice)
+        console.log(progress)
         let html =
             '<p>Progress</p>' +
             '<div class="donate-holder">' +
             '   <div class="progress-bar-outer">' +
-            `       <div class="progress-bar-inner">${Math.round(Number(punchStarter.accumulatedMoney) / Number(punchStarter.targetPrice))}</div>` +
-            '       </div>' +
+            `       <div class="progress-bar-inner">${progress}</div>` +
             '   </div>' +
             '<input type="number">' +
-            '<button>Donate</button>'
-        $('.punch-starter-progress').append($(html))
+            '<button>Donate</button>' +
+            '</div>'
+        $('.punch-starter-progress').append($(html));
+        $('.donate-holder button').click(function () {
+            let donate = $('.donate-holder input').val();
+            donate = Number(donate);
+            punchStarter.accumulatedMoney += donate;
+        })
         $('.progress-bar-inner').css('width', (progress < 100 ? (progress *0.7) + 'vw' : '70vw'))
     }
 
