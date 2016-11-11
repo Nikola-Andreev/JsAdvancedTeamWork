@@ -8,7 +8,7 @@ class CreateModel {
         let html = '';
         html = '<div class="create-title">Create a PunchStarter</div>' +
             '<div class="punch-starter-category">' +
-            '<select >';
+            '<select id="category">';
         for (let category in categories) {
             html += `<option value=${category}>${category}</option>`
         }
@@ -83,6 +83,67 @@ class CreateModel {
             $('.input-actors :selected').remove()
         })
     }
+
+    attachEvents(){
+        let that = this
+        $('.punch-starter-category').on('change', function () {
+            let value =  $('#category').val()
+            that._category = value
+            if(that.category === 'Game'){
+                $('.individual-parameters').empty()
+                that.renderCreateGameModel()
+                that.attachEventsCreateGameModel()
+            } else if(that.category === 'Movie'){
+                $('.individual-parameters').empty()
+                that.renderCreateMovieModel()
+                that.attachEventsMovieGameModel()
+            } else if(that.category === 'Innovative'){
+                $('.individual-parameters').empty()
+                that.renderCreateInovativeModel()
+                that.attachEventsInovativeGameModel()
+            } else if(that.category === 'Food'){
+                $('.individual-parameters').empty()
+                that.renderCreateFoodModel()
+                that.attachEventsFoodGameModel()
+            } else if(that.category === 'Crafts'){
+                $('.individual-parameters').empty()
+                that.renderCreateCraftsModel()
+                that.attachEventsCraftGameModel()
+            }
+        })
+    }
+
+    renderCreateGameModel(){
+        let html =
+            '<label>Technologies:</label>' +
+            '<div class="list-holder">' +
+            '<select class="input-technologies"></select>' +
+            '</div>' +
+            '<div class="input-holder">' +
+            '<input class="new-technology" type="text" placeholder="Add technology..."></div>' +
+            '<div class="button-holder">' +
+            '<button class="add-technology-button" type="button">Add</button>' +
+            '<button class="remove-technology-button" type="button">Remove</button></div> '
+
+        $('.individual-parameters').append(html)
+
+    }
+
+    attachEventsCreateGameModel(){
+        $('.add-technology-button').on('click',function () {
+            let value = $('.new-technology').val()
+            let option = $('<option></option>').text(value)
+            $('.input-technologies').append(option)
+            $('.new-technology').val('')
+        })
+
+        $('.remove-technology-button').on('click',function () {
+            let value = $('.input-technologies').val()
+            $(`.input-technologies :selected`).remove()
+        })
+    }
+
+    renderCreateInnovativeModel(){}
 
     get category(){
         return this._category
