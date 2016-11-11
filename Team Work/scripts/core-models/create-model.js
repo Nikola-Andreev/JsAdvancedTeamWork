@@ -1,6 +1,14 @@
+let nextId = 0;
+let InnovativePunchStarter = require('../punch-starters/innovative-punch-starter.js')
+let MoviePunchStarter = require('../punch-starters/movie-punch-starter.js')
+let GamePunchStarter = require('../punch-starters/game-punch-starter.js')
+let FoodPunchStarter = require('../punch-starters/food-punch-starter.js')
+let CraftsPunchStarter = require('../punch-starters/crafts-punch-starter.js')
+
 class CreateModel {
 
-    constructor(){
+    constructor(startId = 1){
+        nextId = startId;
         this._category = 'Movie'
     }
 
@@ -131,34 +139,60 @@ class CreateModel {
             let description = $('.input-description').val()
             let genres = []
             $('.input-genres option').each(function() {
-                genres.push(this.val())
+                genres.push($(this).val())
             })
             let price = Number($('.input-target-price').val())
             let punchStarterType =  $('#category').val()
 
-            let nameValid = false
-            if(name !== '' && typeof name == 'string'){
-                nameValid = true
-            }
-            let manValid = false
-            if(manufacturer !== '' && typeof manufacturer == 'string'){
-                manufacturer = true
-            }
-            let descValid = false
-            if(description !== '' && typeof description == 'string'){
-                descValid = true
+
+
+            if(punchStarterType === 'Innovative'){
+                    let obj = new InnovativePunchStarter (nextId++, name, manufacturer, description, genres, price)
+                    $('.wrapper main').trigger('createPunchStarter', [obj])
             }
 
             if(punchStarterType === 'Movie'){
+                let director = $('.input-director').val()
+                let actors = []
+                $('.input-actors option').each(function() {
+                    actors.push($(this).val())
+                })
 
+                let obj = new MoviePunchStarter (nextId++, name, manufacturer, description, genres, price, director, actors)
+                $('.wrapper main').trigger('createPunchStarter', [obj])
+                console.log(obj)
             }
 
-            console.log(name)
-            console.log(manufacturer)
-            console.log(description)
-            console.log(genres)
-            console.log(price)
-            console.log(punchStarterType)
+            if(punchStarterType === 'Game'){
+                let techs = []
+                $('.input-technologies option').each(function() {
+                    techs.push($(this).val())
+                })
+
+                let obj = new MoviePunchStarter (nextId++, name, manufacturer, description, genres, price, techs)
+                $('.wrapper main').trigger('createPunchStarter', [obj])
+            }
+
+            if(punchStarterType === 'Food'){
+                let recipe = $('.input-recipe').val()
+                let ings = []
+                $('.input-ingredients option').each(function() {
+                    ings.push($(this).val())
+                })
+
+                let obj = new FoodPunchStarter (nextId++, name, manufacturer, description, genres, price, ings, recipe)
+                $('.wrapper main').trigger('createPunchStarter', [obj])
+            }
+
+            if(punchStarterType === 'Crafts'){
+                let res = []
+                $('.input-resources option').each(function() {
+                    res.push($(this).val())
+                })
+
+                let obj = new FoodPunchStarter (nextId++, name, manufacturer, description, genres, price, res)
+                $('.wrapper main').trigger('createPunchStarter', [obj])
+            }
         })
 
     }
