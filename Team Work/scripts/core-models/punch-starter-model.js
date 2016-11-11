@@ -48,7 +48,9 @@ class PunchStarterModel {
             for (let element of punchStarter.resources){
                 inside.find('ul').append($('<li>').text(element))
             }
-            html.append(inside)
+            $('.punch-starter-lists').append($(html));
+            $('.punch-starter-lists').append(inside)
+            return
         }
         if (punchStarter.constructor.name == 'FoodPunchStarter'){
             let inside = $('<div>' +
@@ -62,8 +64,10 @@ class PunchStarterModel {
                 '<label>Recipe</label>' +
                 '</div>')
             recipe.append($('<p>').text(punchStarter.recipe))
-            html.append(inside)
-            html.append(recipe)
+            $('.punch-starter-lists').append(html)
+            $('.punch-starter-lists').append(inside)
+            $('.punch-starter-lists').append(recipe)
+            return
         }
 
         if (punchStarter.constructor.name == 'GamePunchStarter'){
@@ -74,7 +78,9 @@ class PunchStarterModel {
             for (let row of punchStarter.technologiesUsed){
                 $(inside).find('ul').append($('<li>').text(row))
             }
-            html.append(inside)
+            $('.punch-starter-lists').append(html)
+            $('.punch-starter-lists').append(inside)
+            return
         }
 
 
@@ -90,8 +96,10 @@ class PunchStarterModel {
                 '<label>Director</label>' +
                 '</div>')
             director.append($('<p>').text(punchStarter.director))
-            html.append(inside)
-            html.append(director)
+            $('.punch-starter-lists').append($(html));
+            $('.punch-starter-lists').append(inside)
+            $('.punch-starter-lists').append(director)
+            return
         }
         $('.punch-starter-lists').append($(html));
     }
