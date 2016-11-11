@@ -143,15 +143,16 @@ class CreateModel {
             })
             let price = Number($('.input-target-price').val())
             let punchStarterType =  $('#category').val()
-
-
-
-            if(punchStarterType === 'Innovative'){
+            let isValid = false
+            if (name!='' && manufacturer != '' && description != '' && price >=0){
+                isValid = true
+            }
+            if(punchStarterType === 'Innovative' && isValid){
                     let obj = new InnovativePunchStarter (nextId++, name, manufacturer, description, genres, price)
                     $('.wrapper main').trigger('createPunchStarter', [obj])
             }
 
-            if(punchStarterType === 'Movie'){
+            if(punchStarterType === 'Movie' && isValid){
                 let director = $('.input-director').val()
                 let actors = []
                 $('.input-actors option').each(function() {
@@ -163,7 +164,7 @@ class CreateModel {
                 console.log(obj)
             }
 
-            if(punchStarterType === 'Game'){
+            if(punchStarterType === 'Game' && isValid){
                 let techs = []
                 $('.input-technologies option').each(function() {
                     techs.push($(this).val())
@@ -173,7 +174,7 @@ class CreateModel {
                 $('.wrapper main').trigger('createPunchStarter', [obj])
             }
 
-            if(punchStarterType === 'Food'){
+            if(punchStarterType === 'Food' && isValid){
                 let recipe = $('.input-recipe').val()
                 let ings = []
                 $('.input-ingredients option').each(function() {
@@ -184,7 +185,7 @@ class CreateModel {
                 $('.wrapper main').trigger('createPunchStarter', [obj])
             }
 
-            if(punchStarterType === 'Crafts'){
+            if(punchStarterType === 'Crafts' && isValid){
                 let res = []
                 $('.input-resources option').each(function() {
                     res.push($(this).val())
