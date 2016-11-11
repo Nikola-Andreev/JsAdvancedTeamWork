@@ -56,6 +56,31 @@ class CreateModel {
 
         $('.wrapper main').html(html);
     }
+    renderCreateMovieModel() {
+        let html =
+            '<label>Director:</label>' +
+            '<div class="input-holder">' +
+            '<input class="input-director" type="text" placeholder="Director..."></div>' +
+            '<label>Actors:</label>' +
+            '<div class="list-holder"><select class="input-actors"></select></div>' +
+            '<div class="input-holder">' +
+            '<input class="new-actor" type="text" placeholder="Add actor..."></div>' +
+            '<div class="button-holder"><button class="add-actor-button" type="button">Add</button>' +
+            '<button class="remove-actor-button" type="button">Delete</button></div>'
+
+        $('.wrapper main form .individual-parameters').append(html)
+
+        $('.wrapper main form .individual-parameters .add-actor-button').on('click', function(){
+            if ($('.new-actor').val() != '') {
+                $('.input-actors').append($('<option>').text($('.new-actor').val()))
+                $('.new-actor').val('')
+            }
+        })
+
+        $('.wrapper main form .individual-parameters .remove-actor-button').on('click', function(){
+            $('.input-actors :selected').remove()
+        })
+    }
     get category(){
         return this._category
     }
