@@ -23,11 +23,6 @@ class HomeModel {
                return b.accumulatedMoney/b.targetPrice - a.accumulatedMoney/a.targetPrice
             }).slice(0,3)
 
-            for (let i = 0; i < database.length; i++) {
-                console.log(database[i])
-                console.log(database[i].accumulatedMoney/database[i].targetPrice )
-            }
-
             $('.wrapper main').html(
                 '<div class="home-logged-in-welcome">'+
                 '   Welcome, ' + sessionStorage['username']  + '!' +
