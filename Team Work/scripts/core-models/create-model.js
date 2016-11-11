@@ -143,6 +143,28 @@ class CreateModel {
         })
     }
 
+    renderCreateCraftsModel () {
+        let html = '<div class="list-holder"><select class="input-resources"></select></div>' +
+            '<div class="input-holder">' +
+            '<input class="new-resource" type="text" placeholder="Add resource..."></div>' +
+            '<div class="button-holder"><button class="add-resource-button" type="button">Add</button>' +
+            '<button class="remove-resource-button" type="button">Delete</button></div>'
+        $('.wrapper main form .individual-parameters').append(html)
+    }
+
+    attachEventsCreateCraftsModel(){
+        $('.wrapper main form .individual-parameters .add-resource-button').on('click', function(){
+            if ($('.new-resource').val() != '') {
+                $('.input-resources').append($('<option>').text($('.new-resource').val()))
+                $('.new-resource').val('')
+            }
+        })
+
+        $('.wrapper main form .individual-parameters .remove-resource-button').on('click', function(){
+            $('.input-resources :selected').remove()
+        })
+    }
+
     renderCreateInnovativeModel(){}
 
     get category(){
