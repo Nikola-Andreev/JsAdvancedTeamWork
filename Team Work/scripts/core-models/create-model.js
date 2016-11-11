@@ -55,6 +55,8 @@ class CreateModel {
         html += createFormHolder;
 
         $('.wrapper main').html(html);
+        this.renderCreateMovieModel();
+        this.attachEventsCreateMovieModel();
     }
     renderCreateMovieModel() {
         let html =
