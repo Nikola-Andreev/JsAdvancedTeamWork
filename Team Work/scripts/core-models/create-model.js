@@ -22,7 +22,7 @@ class CreateModel {
             '<input class="input-name" type="text" placeholder="Name..." maxlength="20"></div>' +
             '<label>Manufacturer:</label>' +
             '<div class="input-holder">' +
-            '<input class="input-name" type="text" placeholder="Manufacturer..." maxlength="20"></div>' +
+            '<input class="input-manufacturer" type="text" placeholder="Manufacturer..." maxlength="20"></div>' +
             '<label>Description:</label>' +
             '<div class="input-holder">' +
             '<textarea class="input-description" placeholder="Description..." rows="2"></textarea>' +
@@ -166,6 +166,34 @@ class CreateModel {
     }
 
     renderCreateInnovativeModel(){}
+
+    renderCreateFoodModel() {
+        let individualParams = '<label>Ingredients:</label>' +
+            '<div class="list-holder">' +
+            '<select class="input-ingredients"></select></div>' +
+            '<div class="input-holder"><input class="new-ingredient" type="text" placeholder="Add ingredient..." maxlength="20"></div> ' +
+            '<div class="button-holder">' +
+            '<button class="add-ingredient-button" type="button">Add</button>' +
+            '<button class="remove-ingredient-button" type="button">Remove</button></div>' +
+            '<div class="input-holder"><textarea class="input-recipe" placeholder="Recipe..."></textarea></div> ';
+
+        $('.individual-parameters').html(individualParams);
+    }
+
+    attachEventsCreateFoodModel() {
+        $('.add-ingredient-button').click(function () {
+            let newIngredient = $('.new-ingredient').val();
+            if(newIngredient != ''){
+                $('.input-ingredients').append(`<option>${newIngredient}</option>`);
+            }
+            $('.new-ingredient').val('');
+        });
+        $('.remove-ingredient-button').click(function () {
+            let ingredients = $('.input-ingredients').children();
+            $('.input-ingredients :selected').remove();
+        });
+    }
+
 
     get category(){
         return this._category
